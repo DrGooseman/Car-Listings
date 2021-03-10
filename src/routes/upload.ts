@@ -1,6 +1,9 @@
 import express, { Request, Response } from "express";
 import multer from "multer";
 
+import { importData as importListingsData } from "../models/listings";
+import { importData as importContactsData } from "../models/contacts";
+
 const router = express.Router();
 
 interface MulterRequest extends Request {
@@ -21,13 +24,17 @@ const upload = multer({ storage });
 router.post(
   "/upload",
   upload.single("csvFile"),
-  (req: MulterRequest, res: Response) => {
+  async (req: MulterRequest, res: Response) => {
     try {
       const message = req.file ? "Success!" : "Error";
+
+      if (req.file.originalname === "listings.csv") importListingsData();
+      else if (req.file.originalname === "contacts.csv") importContactsData();
+
       res.redirect("/update-data?message=" + message);
     } catch (err) {
       const message = "Error";
-      res.send("/update-data?message=" + message);
+      res.redirect("/update-data?message=" + message);
     }
   }
 );
