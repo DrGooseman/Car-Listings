@@ -1,0 +1,28 @@
+I just wanted to write down a few thoughts that popped into my head.
+
+1 - Normally I prefer to write a seperate front-end rather than do server-side rendering.
+ But since the application is so basic, will probably only be used by one or a few people,
+  and had "keep it simple" in the requirements, I decided that it would be overkill.
+  Also, this will give me a good excuse to learn more about how server-side rendering works
+  in the context of TypeScript rather than JavaScript (which I have more experience with).
+
+2- Normally I would always do some sort of authentification when dealing with sensitive data,
+but after reading the assignment, I get the idea that it would be beyond the scope of what you
+want to see here and that I should just keep it simple.
+
+Things that I would do if I had more time (I have already passed the time limit and working on
+it longer would seem unfair)
+
+1- Clean up code / write better TypeScript
+
+2- Write a more efficient way to generate multiple reports (reusing data instead of repeating calculations for each report)
+
+3- See if there is a more elegant/efficient way to get the data I want (maybe using different data structures or functions)
+
+4- Tests
+
+5- Handle edge cases (what if there arent even 5 contacted listings in a month?)
+
+6- Data validation when a new file is uploaded
+
+7- Split my routes up more logically

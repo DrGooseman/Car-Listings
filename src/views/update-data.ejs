@@ -1,0 +1,19 @@
+<%- include('includes/head.ejs') %>
+</head>
+<body>
+    <div class="container">
+        <%- include('includes/navigation.ejs') %>
+       <div class="content">
+           <h1>Update Data</h1>
+
+           <form action="/upload" method="post" enctype="multipart/form-data" class="box login">
+            <input type="file" name="csvFile">
+            <input type="submit" class="" value="Upload" tabindex="1">
+            </form>
+
+            <br>
+            <br>
+            <h3><%= message === undefined ? '' : message %></h3>
+       </div>
+    </div>
+    <%- include('includes/end.ejs') %>
